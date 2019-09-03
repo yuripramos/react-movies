@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content should match snapshot 1`] = `
+<Container
+  blacklist={
+    Array [
+      "css",
+      "width",
+      "m",
+      "mt",
+      "mr",
+      "mb",
+      "ml",
+      "mx",
+      "my",
+      "p",
+      "pt",
+      "pr",
+      "pb",
+      "pl",
+      "px",
+      "py",
+      "fontSize",
+      "color",
+      "bg",
+      "flex",
+      "order",
+      "alignSelf",
+    ]
+  }
+>
+  <styled.div>
+    <styled.div
+      width={0}
+    >
+      <Hide
+        above={null}
+        below="lg"
+      >
+        <ArticleList
+          articlesList={
+            Array [
+              Object {
+                "body": "We will mesh the buzzword. Our feature set is unparallele",
+                "metadata": Object {
+                  "authorId": 2,
+                  "publishedAt": 1492004832000,
+                },
+                "title": "AssCo has revamped the theory of versioning",
+              },
+              Object {
+                "body": "she is no take arms and to take arms.",
+                "metadata": Object {
+                  "authorId": 1,
+                  "publishedAt": 1431006432000,
+                },
+                "title": "Matleh",
+              },
+            ]
+          }
+          authorsList={
+            Array [
+              Object {
+                "id": 1,
+                "name": "Jemma Chadwick",
+              },
+              Object {
+                "id": 2,
+                "name": "Nicholas Jordan",
+              },
+            ]
+          }
+        />
+      </Hide>
+    </styled.div>
+    <styled.div
+      width={100}
+    >
+      <ArticleDetail
+        articlesList={
+          Array [
+            Object {
+              "body": "We will mesh the buzzword. Our feature set is unparallele",
+              "metadata": Object {
+                "authorId": 2,
+                "publishedAt": 1492004832000,
+              },
+              "title": "AssCo has revamped the theory of versioning",
+            },
+            Object {
+              "body": "she is no take arms and to take arms.",
+              "metadata": Object {
+                "authorId": 1,
+                "publishedAt": 1431006432000,
+              },
+              "title": "Matleh",
+            },
+          ]
+        }
+        authorsList={
+          Array [
+            Object {
+              "id": 1,
+              "name": "Jemma Chadwick",
+            },
+            Object {
+              "id": 2,
+              "name": "Nicholas Jordan",
+            },
+          ]
+        }
+        innerRef={
+          Object {
+            "current": null,
+          }
+        }
+      />
+    </styled.div>
+  </styled.div>
+</Container>
+`;

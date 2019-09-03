@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarMenu component should match snapshot 1`] = `
+<styled.ul>
+  <styled.div />
+  <styled.li
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.div />
+    NEWS
+  </styled.li>
+  <styled.li
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.div />
+    OUR VISION
+  </styled.li>
+  <styled.li
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.div />
+    CONTACT
+  </styled.li>
+</styled.ul>
+`;
+
+exports[`SidebarMenu component should match snapshot for desktop 1`] = `
+<styled.div>
+  <styled.div
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.span>
+      NEWS
+    </styled.span>
+  </styled.div>
+  <styled.div
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.span>
+      OUR VISION
+    </styled.span>
+  </styled.div>
+  <styled.div
+    active={false}
+    onClick={[Function]}
+  >
+    <styled.span>
+      CONTACT
+    </styled.span>
+  </styled.div>
+</styled.div>
+`;

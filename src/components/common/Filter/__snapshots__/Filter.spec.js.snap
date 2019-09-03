@@ -1,0 +1,779 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter component should match snapshot 1`] = `
+<Filter
+  componentLabels={
+    Object {
+      "filterButton": "mock",
+      "filterLabel": "mock_2",
+    }
+  }
+  mobileFilterDescriptionRenderer={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  onFilter={[MockFunction]}
+>
+  <styled.form
+    isShown={false}
+    onSubmit={[Function]}
+  >
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-EHOje",
+            "isStatic": true,
+            "lastClassName": "gupbfL",
+            "rules": Array [
+              "
+  font-family: \\"Lato Bold\\", \\"Lato\\";
+  width: 100%;
+  background-color: ",
+              "#4a90e2",
+              ";
+  box-shadow: 0 ",
+              "0.0625rem",
+              " ",
+              "0.75rem",
+              " ",
+              "0.375rem",
+              " rgba(211, 225, 232, 0.13);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10001;
+  font-size: ",
+              "0.6875rem",
+              ";
+  font-weight: 500;
+  line-height: 1.45;
+  text-transform: uppercase;
+
+  ",
+              "
+    @media (min-width: ",
+              "62rem",
+              ") {
+      ",
+              "
+    margin: ",
+              "0.625rem",
+              " 0;
+    background-color: ",
+              "#FFF",
+              ";
+    position: static;
+    height: ",
+              "4.5rem",
+              ";
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    border-radius: ",
+              "0.25rem",
+              ";
+    padding: 0 ",
+              "0.9375rem",
+              ";
+  ",
+              ";
+    }
+  ",
+              ";
+",
+            ],
+          },
+          "displayName": "styled.form",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-EHOje",
+          "target": "form",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+      isShown={false}
+      onSubmit={[Function]}
+    >
+      <form
+        className="sc-EHOje gupbfL"
+        onSubmit={[Function]}
+      >
+        <styled.div
+          onClick={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-gZMcBi",
+                  "isStatic": true,
+                  "lastClassName": "hhbgDr",
+                  "rules": Array [
+                    "
+  display: flex;
+  align-items: center;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-gZMcBi",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onClick={[Function]}
+          >
+            <div
+              className="sc-gZMcBi hhbgDr"
+              onClick={[Function]}
+            >
+              <styled.div
+                hasFilter={true}
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bZQynM",
+                        "isStatic": false,
+                        "lastClassName": "dcXidZ",
+                        "rules": Array [
+                          "
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ",
+                          "1.625rem",
+                          ";
+  height: ",
+                          "1.625rem",
+                          ";
+  margin: ",
+                          "1.625rem",
+                          ";
+  margin-right: 0;
+  border-radius: ",
+                          "0.25rem",
+                          ";
+  color: ",
+                          "#FFF",
+                          ";
+  background: ",
+                          "#27445f",
+                          ";
+
+  ",
+                          [Function],
+                          ";
+
+  ",
+                          "
+    @media (min-width: ",
+                          "62rem",
+                          ") {
+      ",
+                          "
+    color: ",
+                          "#003b78",
+                          ";
+    background: ",
+                          "#eaeff9",
+                          ";
+    margin: 0;
+  ",
+                          ";
+    }
+  ",
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bZQynM",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  hasFilter={true}
+                >
+                  <div
+                    className="sc-bZQynM dcXidZ"
+                  >
+                    <IconGenerator
+                      name="Filter"
+                    >
+                      <Filter
+                        name="Filter"
+                      >
+                        <svg
+                          height="16"
+                          viewBox="0 0 13 16"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.153 8.547a2.201 2.201 0 0 1-4.204 0H1.291a.647.647 0 1 1 0-1.293h5.658a2.201 2.201 0 0 1 4.204 0h.485a.647.647 0 0 1 0 1.293h-.485zM9.05 6.995a.906.906 0 0 0 0 1.81.906.906 0 0 0 0-1.81zM5.462 3.503a2.201 2.201 0 0 1-4.204 0 .647.647 0 0 1 0-1.292 2.201 2.201 0 0 1 4.204 0l6.176-.001a.647.647 0 1 1 0 1.293H5.462zM3.36 1.951a.906.906 0 0 0 0 1.81.906.906 0 0 0 0-1.81zm3.913 11.64a2.201 2.201 0 0 1-4.204 0H1.291a.647.647 0 1 1 0-1.293h1.778a2.201 2.201 0 0 1 4.204 0h4.365a.647.647 0 1 1 0 1.293H7.273zM5.17 12.04a.906.906 0 0 0 0 1.811.906.906 0 0 0 0-1.81z"
+                            fill="currentColor"
+                            fillRule="nonzero"
+                          />
+                        </svg>
+                      </Filter>
+                    </IconGenerator>
+                  </div>
+                </StyledComponent>
+              </styled.div>
+              <styled.h1>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-gzVnrw",
+                        "isStatic": true,
+                        "lastClassName": "dvgDTE",
+                        "rules": Array [
+                          "
+  color: ",
+                          "#FFF",
+                          ";
+  line-height: 1.45;
+  font-size: ",
+                          "0.875rem",
+                          ";
+  padding-left: ",
+                          "0.875rem",
+                          ";
+
+  ",
+                          "
+    @media (min-width: ",
+                          "62rem",
+                          ") {
+      ",
+                          "
+    color: ",
+                          "#003b78",
+                          ";
+  ",
+                          ";
+    }
+  ",
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "styled.h1",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-gzVnrw",
+                      "target": "h1",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <h1
+                    className="sc-gzVnrw dvgDTE"
+                  >
+                    mock_2
+                    :
+                    <styled.span>
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-htoDjs",
+                              "isStatic": true,
+                              "lastClassName": "hzmNuJ",
+                              "rules": Array [
+                                "
+  text-transform: none;
+  margin-left: ",
+                                "0.5rem",
+                                ";
+
+  ",
+                                "
+    @media (min-width: ",
+                                "62rem",
+                                ") {
+      ",
+                                "
+    display: none;
+  ",
+                                ";
+    }
+  ",
+                                ";
+",
+                              ],
+                            },
+                            "displayName": "styled.span",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-htoDjs",
+                            "target": "span",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                      >
+                        <span
+                          className="sc-htoDjs hzmNuJ"
+                        />
+                      </StyledComponent>
+                    </styled.span>
+                  </h1>
+                </StyledComponent>
+              </styled.h1>
+              <styled.div
+                isShown={false}
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-dnqmqq",
+                        "isStatic": false,
+                        "lastClassName": "eNYMxU",
+                        "rules": Array [
+                          "
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  width: ",
+                          "1.625rem",
+                          ";
+  height: ",
+                          "1.625rem",
+                          ";
+  margin-right: ",
+                          "1.625rem",
+                          ";
+  color: ",
+                          "#FFF",
+                          ";
+  transform: rotate(180deg);
+
+  ",
+                          "
+    @media (min-width: ",
+                          "62rem",
+                          ") {
+      ",
+                          "
+    display: none;
+  ",
+                          ";
+    }
+  ",
+                          ";
+
+  ",
+                          [Function],
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-dnqmqq",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  isShown={false}
+                >
+                  <div
+                    className="sc-dnqmqq eNYMxU"
+                  >
+                    <IconGenerator
+                      name="Arrow"
+                    >
+                      <Arrow
+                        name="Arrow"
+                      >
+                        <svg
+                          height="6"
+                          viewBox="0 0 9 6"
+                          width="9"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M1.337.67l3.158 3.508L7.653.67a.469.469 0 0 1 .704 0 .606.606 0 0 1 0 .782l-3.51 3.89a.469.469 0 0 1-.704 0l-3.5-3.9a.606.606 0 0 1 0-.783.45.45 0 0 1 .694.011z"
+                            fill="currentColor"
+                            fillRule="nonzero"
+                          />
+                        </svg>
+                      </Arrow>
+                    </IconGenerator>
+                  </div>
+                </StyledComponent>
+              </styled.div>
+            </div>
+          </StyledComponent>
+        </styled.div>
+        <styled.div
+          isShown={false}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-fjdhpX",
+                  "isStatic": false,
+                  "lastClassName": "gmcun",
+                  "rules": Array [
+                    "
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.2s linear;
+  background: ",
+                    "#f6f9fb",
+                    ";
+
+  ",
+                    [Function],
+                    ";
+
+  ",
+                    "
+    @media (min-width: ",
+                    "62rem",
+                    ") {
+      ",
+                    "
+    display: flex;
+    overflow: visible;
+    height: auto;
+    background: ",
+                    "#FFF",
+                    ";
+
+    ",
+                    [Function],
+                    ";
+  ",
+                    ";
+    }
+  ",
+                    ";
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-fjdhpX",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            isShown={false}
+          >
+            <div
+              className="sc-fjdhpX gmcun"
+            >
+              <styled.div>
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-gqjmRU",
+                        "isStatic": true,
+                        "lastClassName": "jxwYzn",
+                        "rules": Array [
+                          "
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+  padding: ",
+                          "1.25rem",
+                          " 0;
+
+  ",
+                          "
+    @media (min-width: ",
+                          "62rem",
+                          ") {
+      ",
+                          "
+    padding: 0 ",
+                          "1.25rem",
+                          ";
+  ",
+                          ";
+    }
+  ",
+                          ";
+",
+                        ],
+                      },
+                      "displayName": "styled.div",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-gqjmRU",
+                      "target": "div",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                >
+                  <div
+                    className="sc-gqjmRU jxwYzn"
+                  >
+                    mock
+                  </div>
+                </StyledComponent>
+              </styled.div>
+              <Button
+                className={null}
+                disabled={false}
+                height={null}
+                isCallToAction={true}
+                onClick={null}
+                small={true}
+                type="submit"
+                width={110}
+              >
+                <styled.button
+                  className={null}
+                  data-test="Button"
+                  disabled={false}
+                  height={null}
+                  isCallToAction={true}
+                  onClick={null}
+                  small={true}
+                  type="submit"
+                  width={110}
+                >
+                  <StyledComponent
+                    className={null}
+                    data-test="Button"
+                    disabled={false}
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bdVaJa",
+                          "isStatic": false,
+                          "lastClassName": "iAUTga",
+                          "rules": Array [
+                            "
+  background: white;
+  border-radius: ",
+                            "0.25rem",
+                            ";
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: ",
+                            "0.75rem",
+                            ";
+  letter-spacing: ",
+                            "0.0125rem",
+                            ";
+  line-height: ",
+                            "2.8125rem",
+                            ";
+  outline: none;
+  padding: 0 ",
+                            "1.25rem",
+                            ";
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease-in-out color, 0.2s ease-in-out background,
+    0.2s ease-in-out box-shadow, 0.2s ease-in-out border, 0.1s transform;
+  white-space: nowrap;
+  width: ",
+                            [Function],
+                            ";
+  height: ",
+                            [Function],
+                            ";
+  user-select: none;
+  opacity: ",
+                            [Function],
+                            ";
+  ",
+                            [Function],
+                            ";
+
+  ",
+                            "
+    @media (min-width: ",
+                            "62rem",
+                            ") {
+      ",
+                            "
+    width: ",
+                            [Function],
+                            ";
+  ",
+                            ";
+    }
+  ",
+                            ";
+
+  ",
+                            "
+    @media (min-width: ",
+                            "73.6875rem",
+                            ") {
+      ",
+                            "
+    font-size: ",
+                            "0.8125rem",
+                            ";
+    padding: 0 ",
+                            "1.75rem",
+                            ";
+    line-height: ",
+                            "3rem",
+                            ";
+    padding: ",
+                            [Function],
+                            ";
+  ",
+                            ";
+    }
+  ",
+                            ";
+
+
+  :active {
+    transform: translateY(",
+                            "0.0625rem",
+                            ");
+  }
+
+  ",
+                            [Function],
+                            ";
+
+  ",
+                            [Function],
+                            ";
+
+  ",
+                            [Function],
+                            ";
+  ",
+                            [Function],
+                            ";
+
+  ",
+                            [Function],
+                            ";
+  ",
+                            [Function],
+                            ";
+
+  ",
+                            [Function],
+                            ";
+",
+                          ],
+                        },
+                        "displayName": "styled.button",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bdVaJa",
+                        "target": "button",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    height={null}
+                    isCallToAction={true}
+                    onClick={null}
+                    small={true}
+                    type="submit"
+                    width={110}
+                  >
+                    <button
+                      className="sc-bdVaJa iAUTga"
+                      data-test="Button"
+                      disabled={false}
+                      height={null}
+                      onClick={null}
+                      type="submit"
+                      width={110}
+                    >
+                      mock
+                    </button>
+                  </StyledComponent>
+                </styled.button>
+              </Button>
+            </div>
+          </StyledComponent>
+        </styled.div>
+      </form>
+    </StyledComponent>
+  </styled.form>
+</Filter>
+`;

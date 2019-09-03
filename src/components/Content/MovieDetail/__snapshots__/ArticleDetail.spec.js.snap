@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content should match snapshot 1`] = `
+<styled.div
+  large={true}
+>
+  <ContentFilters
+    authorsList={
+      Array [
+        Object {
+          "id": 1,
+          "name": "Jemma Chadwick",
+        },
+        Object {
+          "id": 2,
+          "name": "Nicholas Jordan",
+        },
+      ]
+    }
+    defaultFilter={
+      Object {
+        "range": 5,
+        "type": "author",
+      }
+    }
+    onFilter={[Function]}
+  />
+  <styled.div
+    key="article-0"
+    last={false}
+  >
+    <styled.h1>
+      AssCo has revamped the theory of versioning
+    </styled.h1>
+    <styled.div>
+      We will mesh the buzzword. Our feature set is unparallele
+    </styled.div>
+    <styled.span>
+      <styled.span>
+        Published at: 
+        01/01/2010
+      </styled.span>
+      <styled.span>
+        Author : 
+        Nicholas Jordan
+      </styled.span>
+    </styled.span>
+  </styled.div>
+  <styled.div
+    key="article-1"
+    last={true}
+  >
+    <styled.h1>
+      Matleh
+    </styled.h1>
+    <styled.div>
+      she is no take arms and to take arms.
+    </styled.div>
+    <styled.span>
+      <styled.span>
+        Published at: 
+        01/01/2010
+      </styled.span>
+      <styled.span>
+        Author : 
+        Jemma Chadwick
+      </styled.span>
+    </styled.span>
+  </styled.div>
+</styled.div>
+`;

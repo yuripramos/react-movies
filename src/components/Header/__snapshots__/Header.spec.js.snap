@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should match snapshot with props 1`] = `
+<styled.header>
+  <Container
+    blacklist={
+      Array [
+        "css",
+        "width",
+        "m",
+        "mt",
+        "mr",
+        "mb",
+        "ml",
+        "mx",
+        "my",
+        "p",
+        "pt",
+        "pr",
+        "pb",
+        "pl",
+        "px",
+        "py",
+        "fontSize",
+        "color",
+        "bg",
+        "flex",
+        "order",
+        "alignSelf",
+      ]
+    }
+    onClick={[Function]}
+  >
+    <Hide
+      above={null}
+      below="lg"
+    >
+      <Row>
+        <Column>
+          <SidebarMenu
+            currentLocation=""
+            desktop={true}
+          />
+        </Column>
+        <Column>
+          <styled.div>
+            <img
+              alt="business logo"
+              height="44px"
+              src="test-file-stub"
+              width="44px"
+            />
+          </styled.div>
+        </Column>
+      </Row>
+    </Hide>
+    <Hide
+      above="lg"
+      below={null}
+    >
+      <Menu
+        bodyClassName=""
+        burgerBarClassName=""
+        burgerButtonClassName=""
+        className=""
+        crossButtonClassName=""
+        crossClassName=""
+        customBurgerIcon={
+          <IconGenerator
+            color="#333"
+            name="Menu"
+          />
+        }
+        disableAutoFocus={false}
+        disableCloseOnEsc={false}
+        htmlClassName=""
+        id=""
+        isOpen={false}
+        itemClassName=""
+        itemListClassName=""
+        menuClassName=""
+        morphShapeClassName=""
+        noOverlay={false}
+        onStateChange={[Function]}
+        outerContainerId=""
+        overlayClassName=""
+        pageWrapId=""
+        styles={
+          Object {
+            "bmBurgerButton": Object {
+              "cursor": "pointer",
+              "display": "inline-block",
+              "left": "1.5625rem",
+              "padding": "0.125rem",
+              "position": "absolute",
+              "top": "1.25rem",
+            },
+            "bmMenuWrap": Object {
+              "left": 0,
+            },
+          }
+        }
+        width="90%"
+      >
+        <SidebarMenu
+          closeMenu={[Function]}
+          currentLocation=""
+        />
+      </Menu>
+      <styled.div>
+        <img
+          alt="business logo"
+          height="50px"
+          src="test-file-stub"
+          width="50px"
+        />
+      </styled.div>
+    </Hide>
+  </Container>
+</styled.header>
+`;

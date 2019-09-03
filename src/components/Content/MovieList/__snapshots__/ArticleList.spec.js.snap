@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleList component should match snapshot 1`] = `
+<styled.div>
+  <styled.span>
+    Articles
+  </styled.span>
+  <styled.div>
+    No Articles to display
+  </styled.div>
+</styled.div>
+`;
