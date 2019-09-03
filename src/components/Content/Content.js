@@ -28,7 +28,7 @@ class Content extends Component {
         <ContentWrapper>
           {isFilled && (
             <Fragment>
-              <Column width={isResponsive() ? 0 : 30}>
+              <Column width={isResponsive() ? 0 : 45}>
                 <Hide below="lg">
                   <MovieList
                     moviesList={moviesList.results}
@@ -36,7 +36,7 @@ class Content extends Component {
                   />
                 </Hide>
               </Column>
-              <Column width={isResponsive() ? 100 : 70}>
+              <Column width={isResponsive() ? 100 : 55}>
                 <MovieDetail
                   moviesList={moviesList.results}
                   // articlesList={articlesList}

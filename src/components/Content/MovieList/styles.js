@@ -39,8 +39,11 @@ export const Item = styled.div`
   width: 100%;
   padding: ${rem(18)} ${rem(30)};
   border-bottom: solid 1px ${grey10};
-  height: ${rem(60)};
   display: inline-flex;
+`;
+
+export const Image = styled.img`
+  margin: 0 auto;
 `;
 
 export const Name = styled.div`
