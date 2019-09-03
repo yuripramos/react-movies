@@ -2,13 +2,13 @@ import Content from "./Content";
 
 import { connect } from "redux-zero/react";
 
-import contentActions from "../../actions/Articles";
+import contentActions from "../../actions/Movies";
 
 export default connect(
-  ({ articlesList, authorsList, getAuthors, getArticles }) => ({
-    articlesList,
+  ({ moviesList, authorsList, getMovies, getArticles }) => ({
+    moviesList,
     authorsList,
-    getAuthors,
+    getMovies,
     getArticles
   }),
   contentActions

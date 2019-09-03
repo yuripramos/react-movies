@@ -16,14 +16,13 @@ class Content extends Component {
   }
 
   componentDidMount() {
-    const { getArticles, getAuthors } = this.props;
-    getAuthors();
-    getArticles();
+    const { getMovies } = this.props;
+    getMovies();
   }
 
   render() {
-    const { articlesList, authorsList } = this.props;
-    const isFilled = articlesList && articlesList.length > 0;
+    const { moviesList } = this.props;
+    const isFilled = moviesList && moviesList.results.length > 0;
     return (
       <Container>
         <ContentWrapper>
@@ -32,15 +31,15 @@ class Content extends Component {
               <Column width={isResponsive() ? 0 : 30}>
                 <Hide below="lg">
                   <MovieList
-                    authorsList={authorsList}
-                    articlesList={articlesList}
+                    moviesList={moviesList.results}
+                    // articlesList={articlesList}
                   />
                 </Hide>
               </Column>
               <Column width={isResponsive() ? 100 : 70}>
                 <MovieDetail
-                  authorsList={authorsList}
-                  articlesList={articlesList}
+                  moviesList={moviesList.results}
+                  // articlesList={articlesList}
                   innerRef={this.innerRef}
                 />
               </Column>
@@ -55,9 +54,8 @@ class Content extends Component {
 Content.defaultProps = {};
 
 Content.propTypes = {
-  getArticles: func,
-  getAuthors: func,
-  articlesList: arrayOf(object),
+  getMovies: func,
+  moviesList: object,
   authorsList: arrayOf(object)
 };
 

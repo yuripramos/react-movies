@@ -1,10 +1,10 @@
 import * as CONTENT_API from "../../services/Content";
 
 export default () => ({
-  getAuthors: async () => {
-    const authorsResponse = await CONTENT_API.getAuthors();
+  getMovies: async () => {
+    const moviesResponse = await CONTENT_API.getMovies();
     return {
-      authorsList: authorsResponse
+      moviesList: moviesResponse
     };
   },
   getArticles: async () => {
