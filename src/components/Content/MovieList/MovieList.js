@@ -1,22 +1,21 @@
 import React from "react";
-import { arrayOf, object } from "prop-types";
+import { arrayOf, object, func } from "prop-types";
 import { BASE_URL_IMG } from "../../../utils/constants";
 
 import {
   Title,
   Item,
   ListWrapper,
-  Description,
+  // Description,
   Info,
-  InfoStyle,
+  // InfoStyle,
   Name,
   Empty,
   Image
 } from "./styles";
 
-function MovieList({ moviesList }) {
+function MovieList({ moviesList, displayMovieDetails }) {
   const isFilled = moviesList && moviesList.length > 0;
-  console.log("fetch list", moviesList);
   return (
     <ListWrapper>
       <Title>Discover</Title>
@@ -24,10 +23,13 @@ function MovieList({ moviesList }) {
         moviesList.map((e, i) => (
           <Item key={i}>
             <Info>
-              <Description recipient></Description>
+              {/* <Description recipient></Description> */}
               <Name>{e.original_title}</Name>
-              <InfoStyle>{e.overview}</InfoStyle>
-              <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
+              <Image
+                src={`${BASE_URL_IMG}${e.poster_path}`}
+                onClick={() => displayMovieDetails(e.id)}
+              />
+              {/* <InfoStyle>{e.overview}</InfoStyle> */}
             </Info>
           </Item>
         ))
@@ -41,5 +43,6 @@ function MovieList({ moviesList }) {
 export default MovieList;
 
 MovieList.propTypes = {
-  moviesList: arrayOf(object)
+  moviesList: arrayOf(object),
+  displayMovieDetails: func
 };

@@ -22,7 +22,7 @@ class Content extends Component {
 
   render() {
     const { moviesList } = this.props;
-    const isFilled = moviesList && moviesList.results.length > 0;
+    const isFilled = moviesList && moviesList.length > 0;
     return (
       <Container>
         <ContentWrapper>
@@ -31,14 +31,14 @@ class Content extends Component {
               <Column width={isResponsive() ? 0 : 45}>
                 <Hide below="lg">
                   <MovieList
-                    moviesList={moviesList.results}
+                    moviesList={moviesList}
                     // articlesList={articlesList}
                   />
                 </Hide>
               </Column>
               <Column width={isResponsive() ? 100 : 55}>
                 <MovieDetail
-                  moviesList={moviesList.results}
+                  moviesList={moviesList}
                   // articlesList={articlesList}
                   innerRef={this.innerRef}
                 />

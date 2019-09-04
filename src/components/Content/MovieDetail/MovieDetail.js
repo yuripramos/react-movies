@@ -23,7 +23,7 @@ class MovieDetail extends Component {
         range: 5
       },
       isFilled: false,
-      articlesDisplayed: []
+      movieDisplayed: []
     };
     this.onFilter = this.onFilter.bind(this);
   }

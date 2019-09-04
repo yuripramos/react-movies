@@ -9,7 +9,7 @@ import {
 } from "../../../styles/settings";
 
 export const Title = styled.span`
-  font-size: ${rem(16)};
+  font-size: ${rem(23)};
   color: ${green};
   text-align: center;
   font-weight: 700
@@ -44,14 +44,18 @@ export const Item = styled.div`
 
 export const Image = styled.img`
   margin: 0 auto;
+  height: 300px;
+  cursor: pointer;
 `;
 
 export const Name = styled.div`
-  width: ${rem(215)};
-  text-align: left;
+  width: 100%;
+  text-align: center;
+  padding: ${rem(10)} 0;
   text-transform: capitalize;
   text-overflow: ellipsis;
-  font-size: ${rem(15)};
+  font-size: ${rem(16)};
+  font-weight: bold;
 
   /* Required for text-overflow to do anything */
   white-space: nowrap;
