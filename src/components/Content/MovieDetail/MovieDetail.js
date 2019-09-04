@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { array } from "prop-types";
-import moment from "moment";
+import { array, oneOfType, object } from "prop-types";
 import ContentFilters from "./ContentFilters";
-import { findById, filterContentByType } from "../../../utils/filters";
+import { filterContentByType } from "../../../utils/filters";
 
 import {
   Wrapper,
@@ -23,18 +22,17 @@ class MovieDetail extends Component {
         range: 5
       },
       isFilled: false,
-      movieDisplayed: []
+      moviesMap: []
     };
     this.onFilter = this.onFilter.bind(this);
   }
 
   onFilter(filter) {
-    const { authorsList, articlesList } = this.props;
+    const { moviesList } = this.props;
     this.setState({
       filter,
       articlesDisplayed: filterContentByType(
-        authorsList,
-        articlesList,
+        moviesList,
         filter.range,
         filter.type
       )
@@ -42,41 +40,35 @@ class MovieDetail extends Component {
   }
 
   componentDidMount() {
-    const { authorsList, articlesList } = this.props;
+    const { movieDisplayed } = this.props;
 
-    const isFilled = articlesList && authorsList && authorsList.length > 0;
+    console.log("movie did mount", movieDisplayed);
+    const isFilled = movieDisplayed && movieDisplayed.length > 0;
     isFilled &&
       this.setState({
-        articlesDisplayed: articlesList,
-        isFilled: true
+        isFilled: true,
+        moviesMap: movieDisplayed
       });
   }
 
   render() {
-    const { authorsList } = this.props;
-    const { filter, articlesDisplayed, isFilled } = this.state;
+    // const { movieDisplayed } = this.props;
+    const { filter, moviesMap, isFilled } = this.state;
     return (
       <Wrapper large>
         <ContentFilters
-          authorsList={authorsList}
+          // moviesList={moviesList}
           onFilter={this.onFilter}
           defaultFilter={filter}
         />
         {!!isFilled ? (
-          articlesDisplayed.map((e, i) => (
-            <Article
-              key={`article-${i}`}
-              last={i + 1 === articlesDisplayed.length}
-            >
+          moviesMap.map((e, i) => (
+            <Article key={`article-${i}`} last={i + 1 === moviesMap.length}>
               <Title>{e.title}</Title>
               <Content>{e.body}</Content>
               <FooterWrapper>
-                <FooterInfo>
-                  Published at: {moment(e.metadata.publishedAt).format("L")}
-                </FooterInfo>
-                <FooterInfo>
-                  Author : {findById(authorsList, e.metadata.authorId).name}
-                </FooterInfo>
+                <FooterInfo>Release Date: mm/dd/yyyy</FooterInfo>
+                <FooterInfo>Author : namenameanme</FooterInfo>
               </FooterWrapper>
             </Article>
           ))
@@ -93,6 +85,6 @@ class MovieDetail extends Component {
 export default MovieDetail;
 
 MovieDetail.propTypes = {
-  authorsList: array,
-  articlesList: array
+  moviesList: array,
+  movieDisplayed: oneOfType([object, array])
 };

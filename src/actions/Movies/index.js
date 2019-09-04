@@ -8,9 +8,7 @@ export default () => ({
     };
   },
   displayMovieDetails: async (state, id) => {
-    console.log(state.moviesList);
     const movie = state.moviesList.find(movie => movie.id === id);
-    console.log("movie", movie);
     return {
       movieDisplayed: movie
     };

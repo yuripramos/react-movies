@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import { Container } from "../../styles/grid";
 import MovieList from "./MovieList";
 import MovieDetail from "./MovieDetail";
-import { arrayOf, object, func } from "prop-types";
+import { arrayOf, object, func, oneOfType, array } from "prop-types";
 import Hide from "../common/Hide";
 import { isResponsive } from "../../utils/getResolution";
 
@@ -21,7 +21,7 @@ class Content extends Component {
   }
 
   render() {
-    const { moviesList } = this.props;
+    const { moviesList, movieDisplayed } = this.props;
     const isFilled = moviesList && moviesList.length > 0;
     return (
       <Container>
@@ -39,6 +39,7 @@ class Content extends Component {
               <Column width={isResponsive() ? 100 : 55}>
                 <MovieDetail
                   moviesList={moviesList}
+                  movieDisplayed={movieDisplayed}
                   // articlesList={articlesList}
                   innerRef={this.innerRef}
                 />
@@ -56,6 +57,7 @@ Content.defaultProps = {};
 Content.propTypes = {
   getMovies: func,
   moviesList: object,
+  movieDisplayed: oneOfType([object, array]),
   authorsList: arrayOf(object)
 };
 
