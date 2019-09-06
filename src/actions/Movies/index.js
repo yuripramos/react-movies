@@ -10,7 +10,7 @@ export default () => ({
   displayMovieDetails: async (state, id) => {
     const movie = state.moviesList.find(movie => movie.id === id);
     return {
-      movieDisplayed: movie
+      movieDisplayed: [movie]
     };
   }
 });

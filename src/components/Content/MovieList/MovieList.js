@@ -21,14 +21,11 @@ function MovieList({ moviesList, displayMovieDetails }) {
       <Title>Discover</Title>
       {isFilled ? (
         moviesList.map((e, i) => (
-          <Item key={i}>
+          <Item key={i} onClick={() => displayMovieDetails(e.id)}>
             <Info>
               {/* <Description recipient></Description> */}
               <Name>{e.original_title}</Name>
-              <Image
-                src={`${BASE_URL_IMG}${e.poster_path}`}
-                onClick={() => displayMovieDetails(e.id)}
-              />
+              <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
               {/* <InfoStyle>{e.overview}</InfoStyle> */}
             </Info>
           </Item>

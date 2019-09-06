@@ -20,9 +20,8 @@ class MovieDetail extends Component {
       filter: {
         type: "author",
         range: 5
-      },
-      isFilled: false,
-      moviesMap: []
+      }
+      // isFilled: false
     };
     this.onFilter = this.onFilter.bind(this);
   }
@@ -39,21 +38,19 @@ class MovieDetail extends Component {
     });
   }
 
-  componentDidMount() {
-    const { movieDisplayed } = this.props;
+  // componentDidMount() {
 
-    console.log("movie did mount", movieDisplayed);
-    const isFilled = movieDisplayed && movieDisplayed.length > 0;
-    isFilled &&
-      this.setState({
-        isFilled: true,
-        moviesMap: movieDisplayed
-      });
-  }
+  //   isFilled &&
+  //     this.setState({
+  //       isFilled: true
+  //     });
+  // }
 
   render() {
-    // const { movieDisplayed } = this.props;
-    const { filter, moviesMap, isFilled } = this.state;
+    const { filter } = this.state;
+    const { movieDisplayed } = this.props;
+    const isFilled = movieDisplayed && movieDisplayed.length > 0;
+    console.log("mvoie", movieDisplayed, isFilled);
     return (
       <Wrapper large>
         <ContentFilters
@@ -62,13 +59,16 @@ class MovieDetail extends Component {
           defaultFilter={filter}
         />
         {!!isFilled ? (
-          moviesMap.map((e, i) => (
-            <Article key={`article-${i}`} last={i + 1 === moviesMap.length}>
+          movieDisplayed.map((e, i) => (
+            <Article
+              key={`article-${i}`}
+              last={i + 1 === movieDisplayed.length}
+            >
               <Title>{e.title}</Title>
               <Content>{e.body}</Content>
               <FooterWrapper>
                 <FooterInfo>Release Date: mm/dd/yyyy</FooterInfo>
-                <FooterInfo>Author : namenameanme</FooterInfo>
+                <FooterInfo>Author: namenameanme</FooterInfo>
               </FooterWrapper>
             </Article>
           ))
@@ -86,5 +86,6 @@ export default MovieDetail;
 
 MovieDetail.propTypes = {
   moviesList: array,
+  moviesMap: array,
   movieDisplayed: oneOfType([object, array])
 };
