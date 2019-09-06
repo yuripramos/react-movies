@@ -1,24 +1,36 @@
-import React, { Fragment } from "react";
-import { func, object, arrayOf, string, shape } from "prop-types";
+import React, { Fragment, Component } from "react";
+import { func, object, array } from "prop-types";
 
 import Filter from "../../../common/Filter";
 import Dropdown from "../../../common/Dropdown";
 import { Label, Wrapper, FormItem } from "./styles";
+import Icon from "../../../common/Icon";
+import { yellow } from "../../../../styles/settings";
 
-function ContentFilters({ authorsList, onFilter, defaultFilter }) {
-  const componentLabels = {
-    filterButton: "APPLY",
-    filterLabel: "FILTER BY"
-  };
-  const authorsArray =
-    authorsList &&
-    authorsList.map(c => {
-      return { name: c.name, value: c.name };
+const componentLabels = {
+  filterButton: "APPLY",
+  filterLabel: "FILTER BY"
+};
+
+class ContentFilters extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      rating: 0
+    };
+    this.setActiveRating = this.setActiveRating.bind(this);
+  }
+
+  setActiveRating(rating) {
+    this.setState({
+      rating
     });
-  authorsList && authorsArray.unshift({ name: "", value: "" });
-  return (
-    <Wrapper>
-      {authorsArray && (
+  }
+  render() {
+    const { onFilter, defaultFilter } = this.props;
+    const { rating } = this.state;
+    return (
+      <Wrapper>
         <Filter
           onFilter={onFilter}
           defaultFilterState={defaultFilter}
@@ -34,16 +46,8 @@ function ContentFilters({ authorsList, onFilter, defaultFilter }) {
                     name="type"
                     list={[
                       {
-                        name: "author",
-                        value: "author"
-                      },
-                      {
-                        name: "recent",
-                        value: "recent"
-                      },
-                      {
-                        name: "oldest",
-                        value: "oldest"
+                        name: "popularity",
+                        value: "popularity"
                       }
                     ]}
                     value={state && state.filter["type"]}
@@ -51,37 +55,65 @@ function ContentFilters({ authorsList, onFilter, defaultFilter }) {
                     noEmptySelection
                   />
                 </FormItem>
-                {state && state.filter["type"] === "author" && (
+                {state && state.filter["type"] === "popularity" && (
                   <FormItem>
-                    <Label>Author</Label>
-                    <Dropdown
-                      onChange={changeFunc}
-                      name="range"
-                      list={authorsArray}
-                      value={state && state.filter["range"]}
-                      width={230}
-                      noEmptySelection
-                    />
+                    <Label>Rating</Label>
+                    <div onClick={() => this.setActiveRating(1)}>
+                      <Icon
+                        name="Star"
+                        width="15px"
+                        height="15px"
+                        color={rating >= 1 && yellow}
+                      />
+                    </div>
+                    <div onClick={() => this.setActiveRating(2)}>
+                      <Icon
+                        name="Star"
+                        width="15px"
+                        height="15px"
+                        color={rating >= 2 && yellow}
+                      />
+                    </div>
+                    <div onClick={() => this.setActiveRating(3)}>
+                      <Icon
+                        name="Star"
+                        width="15px"
+                        height="15px"
+                        color={rating >= 3 && yellow}
+                      />
+                    </div>
+                    <div onClick={() => this.setActiveRating(4)}>
+                      <Icon
+                        name="Star"
+                        width="15px"
+                        height="15px"
+                        color={rating >= 4 && yellow}
+                      />
+                    </div>
+                    <div onClick={() => this.setActiveRating(5)}>
+                      <Icon
+                        name="Star"
+                        width="15px"
+                        height="15px"
+                        color={rating >= 5 && yellow}
+                      />
+                    </div>
                   </FormItem>
                 )}
               </Fragment>
             );
           }}
         </Filter>
-      )}
-    </Wrapper>
-  );
+        )
+      </Wrapper>
+    );
+  }
 }
 
 ContentFilters.propTypes = {
   onFilter: func.isRequired,
   defaultFilter: object,
-  authorsList: arrayOf(
-    shape({
-      name: string,
-      id: Number
-    })
-  )
+  moviesList: array
 };
 
 export default ContentFilters;

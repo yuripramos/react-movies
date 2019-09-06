@@ -56,9 +56,8 @@ Content.defaultProps = {};
 
 Content.propTypes = {
   getMovies: func,
-  moviesList: object,
   movieDisplayed: oneOfType([object, array]),
-  authorsList: arrayOf(object)
+  moviesList: arrayOf(object)
 };
 
 export default Content;

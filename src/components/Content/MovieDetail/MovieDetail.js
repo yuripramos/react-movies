@@ -18,7 +18,7 @@ class MovieDetail extends Component {
 
     this.state = {
       filter: {
-        type: "author",
+        type: "popularity",
         range: 5
       }
       // isFilled: false
@@ -50,7 +50,6 @@ class MovieDetail extends Component {
     const { filter } = this.state;
     const { movieDisplayed } = this.props;
     const isFilled = movieDisplayed && movieDisplayed.length > 0;
-    console.log("mvoie", movieDisplayed, isFilled);
     return (
       <Wrapper large>
         <ContentFilters

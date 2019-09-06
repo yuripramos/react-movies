@@ -9,6 +9,7 @@ import Menu from "./Menu";
 import MenuClose from "./MenuClose";
 import Filter from "./Filter";
 import Arrow from "./Arrow";
+import Star from "./Star";
 
 const IconGenerator = props => {
   switch (props.name) {
@@ -26,6 +27,8 @@ const IconGenerator = props => {
       return <Filter {...props} />;
     case "Arrow":
       return <Arrow {...props} />;
+    case "Star":
+      return <Star {...props} />;
     default:
       return;
   }

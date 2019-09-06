@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
 export const FormItem = styled.div`
   padding: 0 ${rem(15)};
   align-items: center;
+  cursor: pointer;
   display: flex;
   min-width: 100%;
   margin: ${rem(5)} 0;
