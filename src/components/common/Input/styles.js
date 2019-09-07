@@ -88,7 +88,6 @@ const revealContent2 = css`
 `;
 
 const revealContent3 = css`
-
   ~ ${Label} {
     top: ${rem(12)};
     color: ${black50};
@@ -104,7 +103,7 @@ export const InputField = styled.input`
   font-size: ${rem(13)};
   letter-spacing: ${rem(0.1)};
   color: ${black50};
-  padding: 0 ${rem(52)};
+  padding: 0 ${rem(12)};
   transition: 0.3s padding, 0.3s border;
   box-shadow: none;
 
@@ -194,7 +193,7 @@ export const WrapperDayPicker = styled.div`
     top: -15px;
     ${media.md(css`
       left: 166px;
-       top: -30px;
+      top: -30px;
     `)};
   }
 

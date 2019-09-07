@@ -10,6 +10,7 @@ import {
   Content,
   FooterInfo,
   FooterWrapper,
+  Spacer,
   Article
 } from "./styles";
 
@@ -51,6 +52,7 @@ class MovieDetail extends Component {
     const { filter } = this.state;
     const { movieDisplayed } = this.props;
     const isFilled = movieDisplayed && movieDisplayed.length > 0;
+    console.log("movies", movieDisplayed);
     return (
       <Wrapper large>
         <ContentFilters
@@ -65,18 +67,18 @@ class MovieDetail extends Component {
               key={`article-${i}`}
               last={i + 1 === movieDisplayed.length}
             >
-              <Title>{e.title}</Title>
-              <Content>{e.body}</Content>
+              <Title>{e.original_title}</Title>
+              <Content>{e.overview}</Content>
               <FooterWrapper>
-                <FooterInfo>Release Date: mm/dd/yyyy</FooterInfo>
-                <FooterInfo>Author: namenameanme</FooterInfo>
+                <FooterInfo>Release Date: {e.release_date}</FooterInfo>
+                <FooterInfo>Score: {e.vote_average}</FooterInfo>
               </FooterWrapper>
             </Article>
           ))
         ) : (
-          <span>
-            No content to display, please refresh the page and try again
-          </span>
+          <Spacer>
+            No content to display, select some movie, search or filter
+          </Spacer>
         )}
       </Wrapper>
     );

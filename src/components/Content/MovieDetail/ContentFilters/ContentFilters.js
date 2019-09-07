@@ -104,7 +104,6 @@ class ContentFilters extends Component {
             );
           }}
         </Filter>
-        )
       </Wrapper>
     );
   }

@@ -52,6 +52,10 @@ export const FooterWrapper = styled.span`
   display: inline-flex;
 `;
 
+export const Spacer = styled.div`
+  margin-top: ${rem(50)};
+`;
+
 export const Title = styled.h1`
   font-size: ${rem(24)};
   margin: ${rem(25)} 0 ${rem(10)};
