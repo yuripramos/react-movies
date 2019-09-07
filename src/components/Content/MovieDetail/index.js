@@ -1,3 +1,12 @@
 import MovieDetail from "./MovieDetail";
 
-export default MovieDetail;
+import { connect } from "redux-zero/react";
+
+import contentActions from "../../../actions/Movies";
+
+export default connect(
+  ({ filteringResultsByRating }) => ({
+    filteringResultsByRating
+  }),
+  contentActions
+)(MovieDetail);

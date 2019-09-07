@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { array, oneOfType, object } from "prop-types";
+import { array, oneOfType, object, func } from "prop-types";
 import ContentFilters from "./ContentFilters";
 import SearchBar from "../../common/SearchBar";
-import { filterContentByType } from "../../../utils/filters";
+import { filterContentByRating } from "../../../utils/filters";
 
 import {
   Wrapper,
@@ -20,26 +20,27 @@ class MovieDetail extends Component {
 
     this.state = {
       filter: {
-        type: "popularity",
-        range: 5
+        type: "Rating",
+        rating: 5
       }
       // isFilled: false
     };
     this.onFilter = this.onFilter.bind(this);
+    this.ClearFilterOnSearch = this.ClearFilterOnSearch.bind(this);
   }
 
   onFilter(filter) {
-    const { moviesList } = this.props;
+    const { moviesList, filteringResultsByRating } = this.props;
     this.setState({
-      filter,
-      articlesDisplayed: filterContentByType(
-        moviesList,
-        filter.range,
-        filter.type
-      )
+      filter
     });
+    filteringResultsByRating(filterContentByRating(moviesList, filter.rating));
   }
 
+  ClearFilterOnSearch(bool) {
+    console.log("called on searchbar submit");
+    return bool;
+  }
   // componentDidMount() {
 
   //   isFilled &&
@@ -52,15 +53,15 @@ class MovieDetail extends Component {
     const { filter } = this.state;
     const { movieDisplayed } = this.props;
     const isFilled = movieDisplayed && movieDisplayed.length > 0;
-    console.log("movies", movieDisplayed);
     return (
       <Wrapper large>
         <ContentFilters
           // moviesList={moviesList}
           onFilter={this.onFilter}
           defaultFilter={filter}
+          ClearFilterOnSearch={this.ClearFilterOnSearch(false)}
         />
-        <SearchBar />
+        <SearchBar ClearFilterOnSearch={this.ClearFilterOnSearch(true)} />
         {!!isFilled ? (
           movieDisplayed.map((e, i) => (
             <Article
@@ -90,5 +91,6 @@ export default MovieDetail;
 MovieDetail.propTypes = {
   moviesList: array,
   moviesMap: array,
-  movieDisplayed: oneOfType([object, array])
+  movieDisplayed: oneOfType([object, array]),
+  filteringResultsByRating: func
 };

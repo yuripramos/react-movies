@@ -26,6 +26,13 @@ class ContentFilters extends Component {
       rating
     });
   }
+
+  componentDidUpdate() {
+    // if (this.props.ClearFilterOnSearch()) {
+    console.log("called contentfilters didupdate - IF STATEMENT");
+    // }
+  }
+
   render() {
     const { onFilter, defaultFilter } = this.props;
     const { rating } = this.state;
@@ -46,8 +53,12 @@ class ContentFilters extends Component {
                     name="type"
                     list={[
                       {
-                        name: "popularity",
-                        value: "popularity"
+                        name: "Popularity",
+                        value: "Popularity"
+                      },
+                      {
+                        name: "Rating",
+                        value: "Rating"
                       }
                     ]}
                     value={state && state.filter["type"]}
@@ -55,10 +66,15 @@ class ContentFilters extends Component {
                     noEmptySelection
                   />
                 </FormItem>
-                {state && state.filter["type"] === "popularity" && (
+                {state && state.filter["type"] === "Rating" && (
                   <FormItem>
                     <Label>Rating</Label>
-                    <div onClick={() => this.setActiveRating(1)}>
+                    <div
+                      onClick={() => {
+                        this.setActiveRating(1);
+                        changeFunc(1, "rating");
+                      }}
+                    >
                       <Icon
                         name="Star"
                         width="15px"
@@ -66,7 +82,12 @@ class ContentFilters extends Component {
                         color={rating >= 1 && yellow}
                       />
                     </div>
-                    <div onClick={() => this.setActiveRating(2)}>
+                    <div
+                      onClick={() => {
+                        this.setActiveRating(2);
+                        changeFunc(2, "rating");
+                      }}
+                    >
                       <Icon
                         name="Star"
                         width="15px"
@@ -74,7 +95,12 @@ class ContentFilters extends Component {
                         color={rating >= 2 && yellow}
                       />
                     </div>
-                    <div onClick={() => this.setActiveRating(3)}>
+                    <div
+                      onClick={() => {
+                        this.setActiveRating(3);
+                        changeFunc(3, "rating");
+                      }}
+                    >
                       <Icon
                         name="Star"
                         width="15px"
@@ -82,7 +108,12 @@ class ContentFilters extends Component {
                         color={rating >= 3 && yellow}
                       />
                     </div>
-                    <div onClick={() => this.setActiveRating(4)}>
+                    <div
+                      onClick={() => {
+                        this.setActiveRating(4);
+                        changeFunc(4, "rating");
+                      }}
+                    >
                       <Icon
                         name="Star"
                         width="15px"
@@ -90,7 +121,12 @@ class ContentFilters extends Component {
                         color={rating >= 4 && yellow}
                       />
                     </div>
-                    <div onClick={() => this.setActiveRating(5)}>
+                    <div
+                      onClick={() => {
+                        this.setActiveRating(5);
+                        changeFunc(5, "rating");
+                      }}
+                    >
                       <Icon
                         name="Star"
                         width="15px"
@@ -112,7 +148,8 @@ class ContentFilters extends Component {
 ContentFilters.propTypes = {
   onFilter: func.isRequired,
   defaultFilter: object,
-  moviesList: array
+  moviesList: array,
+  ClearFilterOnSearch: func
 };
 
 export default ContentFilters;

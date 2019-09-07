@@ -34,9 +34,9 @@ class Filter extends Component {
     });
   }
 
-  onChangeFilters(e) {
-    const stateNewProp = e.target.name;
-    const stateNewValue = e.target.value;
+  onChangeFilters(val, name) {
+    const stateNewProp = name;
+    const stateNewValue = val;
 
     this.setState({
       filter: {

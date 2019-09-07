@@ -12,5 +12,10 @@ export default () => ({
     return {
       movieDisplayed: [movie]
     };
+  },
+  filteringResultsByRating: (state, array) => {
+    return {
+      movieDisplayed: array
+    };
   }
 });
