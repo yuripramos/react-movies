@@ -51,7 +51,7 @@ class ContentFilters extends Component {
                       }
                     ]}
                     value={state && state.filter["type"]}
-                    width={100}
+                    width={140}
                     noEmptySelection
                   />
                 </FormItem>

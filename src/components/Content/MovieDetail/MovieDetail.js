@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { array, oneOfType, object } from "prop-types";
 import ContentFilters from "./ContentFilters";
+import SearchBar from "../../common/SearchBar";
 import { filterContentByType } from "../../../utils/filters";
 
 import {
@@ -57,6 +58,7 @@ class MovieDetail extends Component {
           onFilter={this.onFilter}
           defaultFilter={filter}
         />
+        <SearchBar />
         {!!isFilled ? (
           movieDisplayed.map((e, i) => (
             <Article
