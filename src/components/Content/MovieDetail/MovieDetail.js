@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { array, oneOfType, object, func } from "prop-types";
 import ContentFilters from "./ContentFilters";
-import SearchBar from "../../common/SearchBar";
 import { filterContentByRating } from "../../../utils/filters";
 
 import {
@@ -26,28 +25,17 @@ class MovieDetail extends Component {
       // isFilled: false
     };
     this.onFilter = this.onFilter.bind(this);
-    this.ClearFilterOnSearch = this.ClearFilterOnSearch.bind(this);
   }
 
   onFilter(filter) {
-    const { moviesList, filteringResultsByRating } = this.props;
+    const { moviesList, movieDisplayed, filteringResultsByRating } = this.props;
+    const movieArray =
+      movieDisplayed && movieDisplayed.length > 0 ? movieDisplayed : moviesList;
     this.setState({
       filter
     });
-    filteringResultsByRating(filterContentByRating(moviesList, filter.rating));
+    filteringResultsByRating(filterContentByRating(movieArray, filter.rating));
   }
-
-  ClearFilterOnSearch(bool) {
-    console.log("called on searchbar submit");
-    return bool;
-  }
-  // componentDidMount() {
-
-  //   isFilled &&
-  //     this.setState({
-  //       isFilled: true
-  //     });
-  // }
 
   render() {
     const { filter } = this.state;
@@ -59,9 +47,7 @@ class MovieDetail extends Component {
           // moviesList={moviesList}
           onFilter={this.onFilter}
           defaultFilter={filter}
-          ClearFilterOnSearch={this.ClearFilterOnSearch(false)}
         />
-        <SearchBar ClearFilterOnSearch={this.ClearFilterOnSearch(true)} />
         {!!isFilled ? (
           movieDisplayed.map((e, i) => (
             <Article

@@ -8,7 +8,8 @@ export const Label = styled.label`
 `;
 
 export const Wrapper = styled.div`
-  padding: 0 ${rem(15)};
+  padding: 0 ${rem(10)};
+  transform: translateX(-11px);
 `;
 
 export const FormItem = styled.div`

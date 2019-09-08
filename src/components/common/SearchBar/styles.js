@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   display: inline-flex;
   width: 100%;
   text-align: center;
+  margin: 25px 0;
 `;
 
 export const Search = styled.div`

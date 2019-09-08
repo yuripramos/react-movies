@@ -3,7 +3,7 @@ import { Search, Wrapper, IconWrapper, ButtonWrapper } from "./styles";
 import Input from "../../common/Input";
 import Button from "../../common/Button";
 import Icon from "../../common/Icon";
-import { func, object, bool } from "prop-types";
+import { func, object } from "prop-types";
 
 function SearchBar({
   handleUserSearch,
@@ -24,7 +24,7 @@ function SearchBar({
         <ButtonWrapper
           onClick={() => {
             getQueryListBySearch(searchData.searchTerm);
-            ClearFilterOnSearch(false);
+            ClearFilterOnSearch();
           }}
         >
           <Button isCallToAction width={110} type="submit">
@@ -45,7 +45,7 @@ SearchBar.propTypes = {
   handleUserSearch: func.isRequired,
   getQueryListBySearch: func.isRequired,
   searchData: object,
-  ClearFilterOnSearch: bool
+  ClearFilterOnSearch: func
 };
 
 export default SearchBar;
