@@ -22,7 +22,6 @@ class MovieDetail extends Component {
         type: "Rating",
         rating: 5
       }
-      // isFilled: false
     };
     this.onFilter = this.onFilter.bind(this);
   }

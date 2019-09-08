@@ -1,3 +1,14 @@
 import ContentFilters from "./ContentFilters";
 
-export default ContentFilters;
+import { connect } from "redux-zero/react";
+
+import searchActions from "../../../../actions/Search";
+
+export default connect(
+  ({ ClearFilterOnSearch, setActiveRating, rating }) => ({
+    ClearFilterOnSearch,
+    setActiveRating,
+    rating
+  }),
+  searchActions
+)(ContentFilters);

@@ -1,10 +1,12 @@
 import * as CONTENT_API from "../../services/Content";
+import { sortByPopularity } from "../../utils/filters";
 
 export default () => ({
   getMovies: async () => {
     const moviesResponse = await CONTENT_API.getMovies();
+    const moviesByPop = sortByPopularity(moviesResponse.results);
     return {
-      moviesList: moviesResponse.results
+      moviesList: moviesByPop
     };
   },
   displayMovieDetails: async (state, id) => {

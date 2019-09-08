@@ -9,7 +9,8 @@ function SearchBar({
   handleUserSearch,
   searchData,
   getQueryListBySearch,
-  ClearFilterOnSearch
+  ClearFilterOnSearch,
+  ClearSearchBar
 }) {
   return (
     <Wrapper>
@@ -25,6 +26,7 @@ function SearchBar({
           onClick={() => {
             getQueryListBySearch(searchData.searchTerm);
             ClearFilterOnSearch();
+            ClearSearchBar();
           }}
         >
           <Button isCallToAction width={110} type="submit">
@@ -45,7 +47,8 @@ SearchBar.propTypes = {
   handleUserSearch: func.isRequired,
   getQueryListBySearch: func.isRequired,
   searchData: object,
-  ClearFilterOnSearch: func
+  ClearFilterOnSearch: func,
+  ClearSearchBar: func
 };
 
 export default SearchBar;

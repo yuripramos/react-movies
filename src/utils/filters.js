@@ -1,4 +1,4 @@
-// import sortBy from "array-sort-by";
+import sortBy from "array-sort-by";
 // import moment from "moment";
 
 export const findById = (arr, id) => arr.find(c => c.id === id);
@@ -27,3 +27,5 @@ export const filterContentByRating = (movies, rating) => {
   // }
   // return articles;
 };
+
+export const sortByPopularity = arr => sortBy(arr, n => -n.popularity);

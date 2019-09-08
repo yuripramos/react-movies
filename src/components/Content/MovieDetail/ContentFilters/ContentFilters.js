@@ -19,27 +19,20 @@ class ContentFilters extends Component {
     this.state = {
       rating: 0
     };
-    this.setActiveRating = this.setActiveRating.bind(this);
-    this.ClearFilterOnSearch = this.ClearFilterOnSearch.bind(this);
-  }
-
-  setActiveRating(rating) {
-    this.setState({
-      rating
-    });
-  }
-  ClearFilterOnSearch() {
-    this.setState({
-      rating: 0
-    });
   }
 
   render() {
-    const { onFilter, defaultFilter } = this.props;
-    const { rating } = this.state;
+    const {
+      onFilter,
+      defaultFilter,
+      rating,
+      setActiveRating
+      // ClearFilterOnSearch
+    } = this.props;
+    // const { rating } = this.state;
     return (
       <Fragment>
-        <SearchBar ClearFilterOnSearch={() => this.ClearFilterOnSearch()} />
+        <SearchBar />
         <Wrapper>
           <Filter
             onFilter={onFilter}
@@ -56,10 +49,6 @@ class ContentFilters extends Component {
                       name="type"
                       list={[
                         {
-                          name: "Popularity",
-                          value: "Popularity"
-                        },
-                        {
                           name: "Rating",
                           value: "Rating"
                         }
@@ -74,7 +63,7 @@ class ContentFilters extends Component {
                       <Label>Rating</Label>
                       <div
                         onClick={() => {
-                          this.setActiveRating(1);
+                          setActiveRating(1);
                           changeFunc(1, "rating");
                         }}
                       >
@@ -87,7 +76,7 @@ class ContentFilters extends Component {
                       </div>
                       <div
                         onClick={() => {
-                          this.setActiveRating(2);
+                          setActiveRating(2);
                           changeFunc(2, "rating");
                         }}
                       >
@@ -100,7 +89,7 @@ class ContentFilters extends Component {
                       </div>
                       <div
                         onClick={() => {
-                          this.setActiveRating(3);
+                          setActiveRating(3);
                           changeFunc(3, "rating");
                         }}
                       >
@@ -113,7 +102,7 @@ class ContentFilters extends Component {
                       </div>
                       <div
                         onClick={() => {
-                          this.setActiveRating(4);
+                          setActiveRating(4);
                           changeFunc(4, "rating");
                         }}
                       >
@@ -126,7 +115,7 @@ class ContentFilters extends Component {
                       </div>
                       <div
                         onClick={() => {
-                          this.setActiveRating(5);
+                          setActiveRating(5);
                           changeFunc(5, "rating");
                         }}
                       >
@@ -153,6 +142,8 @@ ContentFilters.propTypes = {
   onFilter: func.isRequired,
   defaultFilter: object,
   moviesList: array,
+  rating: Number,
+  setActiveRating: func,
   ClearFilterOnSearch: func
 };
 

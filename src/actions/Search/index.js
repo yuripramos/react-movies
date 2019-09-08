@@ -16,5 +16,20 @@ export default () => ({
     return {
       movieDisplayed: [...moviesResponse.results]
     };
+  },
+  ClearSearchBar: () => {
+    return {
+      searchData: {}
+    };
+  },
+  ClearFilterOnSearch: () => {
+    return {
+      rating: 0
+    };
+  },
+  setActiveRating: (state, rating) => {
+    return {
+      rating
+    };
   }
 });
