@@ -30,17 +30,13 @@ class Content extends Component {
             <Fragment>
               <Column width={isResponsive() ? 0 : 30}>
                 <Hide below="lg">
-                  <MovieList
-                    moviesList={moviesList}
-                    // articlesList={articlesList}
-                  />
+                  <MovieList moviesList={moviesList} />
                 </Hide>
               </Column>
               <Column width={isResponsive() ? 100 : 70}>
                 <MovieDetail
                   moviesList={moviesList}
                   movieDisplayed={movieDisplayed}
-                  // articlesList={articlesList}
                   innerRef={this.innerRef}
                 />
               </Column>

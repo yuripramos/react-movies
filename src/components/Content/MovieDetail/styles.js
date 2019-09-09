@@ -80,13 +80,14 @@ export const FooterInfo = styled.span`
 
 export const FooterWrapper = styled.div`
   display: inline-grid;
+
   ${({ detailed }) =>
     detailed &&
     css`
       display: inline-flex;
       width: 100%;
       justify-content: space-between;
-      height: ${rem(40)};
+      height: ${rem(60)};
       padding: 0 ${rem(15)} 0 ${rem(5)};
       & > span {
         font-size: ${rem(15)} !important;

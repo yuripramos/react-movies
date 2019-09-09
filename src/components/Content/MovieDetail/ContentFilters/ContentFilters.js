@@ -22,14 +22,7 @@ class ContentFilters extends Component {
   }
 
   render() {
-    const {
-      onFilter,
-      defaultFilter,
-      rating,
-      setActiveRating
-      // ClearFilterOnSearch
-    } = this.props;
-    // const { rating } = this.state;
+    const { onFilter, defaultFilter, rating, setActiveRating } = this.props;
     return (
       <Fragment>
         <SearchBar />
