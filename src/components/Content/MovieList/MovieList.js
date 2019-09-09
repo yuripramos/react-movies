@@ -14,14 +14,20 @@ import {
   Image
 } from "./styles";
 
-function MovieList({ moviesList, displayMovieDetails }) {
+function MovieList({ moviesList, displayMovieDetails, ClearFilterOnSearch }) {
   const isFilled = moviesList && moviesList.length > 0;
   return (
     <ListWrapper>
       <Title>Discover</Title>
       {isFilled ? (
         moviesList.map((e, i) => (
-          <Item key={i} onClick={() => displayMovieDetails(e.id)}>
+          <Item
+            key={i}
+            onClick={() => {
+              displayMovieDetails(e.id);
+              ClearFilterOnSearch();
+            }}
+          >
             <Info>
               <Name>{e.original_title}</Name>
               <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
@@ -39,5 +45,6 @@ export default MovieList;
 
 MovieList.propTypes = {
   moviesList: arrayOf(object),
-  displayMovieDetails: func
+  displayMovieDetails: func,
+  ClearFilterOnSearch: func
 };
