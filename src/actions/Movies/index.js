@@ -9,10 +9,14 @@ export default () => ({
       moviesList: moviesByPop
     };
   },
-  displayMovieDetails: async (state, id) => {
-    const movie = state.moviesList.find(movie => movie.id === id);
+  displayMovieDetails: async (state, id, bool) => {
+    const movie =
+      state.movieDisplayed.length > 1
+        ? state.movieDisplayed.find(movie => movie.id === id)
+        : state.moviesList.find(movie => movie.id === id);
     return {
-      movieDisplayed: [movie]
+      movieDisplayed: [movie],
+      isMovieDetailAction: bool
     };
   },
   filteringResultsByRating: (state, array) => {

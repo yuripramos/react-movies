@@ -1,7 +1,8 @@
 const commonState = {
   rating: 0,
   searchData: {},
-  movieDisplayed: []
+  movieDisplayed: [],
+  movieList: []
 };
 
 export default commonState;

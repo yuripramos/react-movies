@@ -14,7 +14,7 @@ function MovieList({ moviesList, displayMovieDetails, ClearFilterOnSearch }) {
           <Item
             key={i}
             onClick={() => {
-              displayMovieDetails(e.id);
+              displayMovieDetails(e.id, true);
               ClearFilterOnSearch();
             }}
           >

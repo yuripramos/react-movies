@@ -19,7 +19,8 @@ export default () => ({
   },
   ClearSearchBar: () => {
     return {
-      searchData: {}
+      searchData: {},
+      isMovieDetailAction: false
     };
   },
   ClearFilterOnSearch: () => {

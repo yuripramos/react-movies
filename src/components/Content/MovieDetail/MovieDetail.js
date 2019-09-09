@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { array, oneOfType, object, func } from "prop-types";
+import { array, oneOfType, object, func, bool } from "prop-types";
 import { filterContentByRating } from "../../../utils/filters";
 import { yellow } from "../../../styles/settings";
 import { BASE_URL_IMG } from "../../../utils/constants";
@@ -60,7 +60,12 @@ class MovieDetail extends Component {
 
   render() {
     const { filter } = this.state;
-    const { movieDisplayed, moviesList } = this.props;
+    const {
+      movieDisplayed,
+      moviesList,
+      displayMovieDetails,
+      isMovieDetailAction
+    } = this.props;
     const isFilled = movieDisplayed && movieDisplayed.length > 0;
     return (
       <Wrapper large>
@@ -68,15 +73,24 @@ class MovieDetail extends Component {
         <MainTitle>MOVIES</MainTitle>
         {!!isFilled
           ? movieDisplayed.map((e, i) => (
-              <Movie key={`movie-${i}`} last={i + 1 === movieDisplayed.length}>
+              <Movie
+                onClick={() => displayMovieDetails(e.id, true)}
+                key={`movie-${i}`}
+                last={i + 1 === movieDisplayed.length}
+                detailed={isMovieDetailAction}
+              >
                 <Title>{e.original_title}</Title>
-                <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
-                <Content>
-                  {e.overview.length > 179
+                <Image
+                  src={`${BASE_URL_IMG}${e.poster_path}`}
+                  detailed={isMovieDetailAction}
+                />
+                <Content detailed={isMovieDetailAction}>
+                  {e.overview.length > 179 && !isMovieDetailAction
                     ? e.overview.substring(0, 180).concat("...")
                     : e.overview}
+                  {isMovieDetailAction && e.overview}
                 </Content>
-                <FooterWrapper>
+                <FooterWrapper detailed={isMovieDetailAction}>
                   <FooterInfo>
                     Release Date: {moment(e.release_date).format("L")}
                   </FooterInfo>
@@ -87,7 +101,11 @@ class MovieDetail extends Component {
               </Movie>
             ))
           : moviesList.map((e, i) => (
-              <Movie key={`movie-${i}`} last={i + 1 === movieDisplayed.length}>
+              <Movie
+                onClick={() => displayMovieDetails(e.id, true)}
+                key={`movie-${i}`}
+                last={i + 1 === movieDisplayed.length}
+              >
                 <Title>{e.original_title}</Title>
                 <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
                 <Content>
@@ -116,5 +134,7 @@ MovieDetail.propTypes = {
   moviesList: array,
   moviesMap: array,
   movieDisplayed: oneOfType([object, array]),
-  filteringResultsByRating: func
+  filteringResultsByRating: func,
+  displayMovieDetails: func,
+  isMovieDetailAction: bool
 };

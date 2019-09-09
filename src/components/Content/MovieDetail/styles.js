@@ -41,7 +41,15 @@ export const Movie = styled.div`
   width: 245px;
   height: 350px;
   display: inline-block;
+  cursor: pointer;
 
+  ${({ detailed }) =>
+    detailed &&
+    css`
+      width: 700px;
+      display: inline-flex;
+      flex-flow: row wrap;
+    `};
   ${({ last }) =>
     last &&
     css`
@@ -56,6 +64,13 @@ export const MainTitle = styled.h1`
 export const Image = styled.img`
   margin: 0 auto;
   height: 300px;
+  ${({ detailed }) =>
+    detailed &&
+    css`
+      margin: auto;
+      height: 400px;
+      width: 300px;
+    `};
 `;
 
 export const FooterInfo = styled.span`
@@ -63,8 +78,20 @@ export const FooterInfo = styled.span`
   font-size: ${rem(14)};
 `;
 
-export const FooterWrapper = styled.span`
+export const FooterWrapper = styled.div`
   display: inline-grid;
+  ${({ detailed }) =>
+    detailed &&
+    css`
+      display: inline-flex;
+      width: 100%;
+      justify-content: space-between;
+      height: ${rem(40)};
+      padding: 0 ${rem(15)} 0 ${rem(5)};
+      & > span {
+        font-size: ${rem(15)} !important;
+      }
+    `};
 `;
 
 export const Spacer = styled.div`
@@ -81,7 +108,6 @@ export const Title = styled.h1`
 export const Content = styled.div`
   padding: 0 ${rem(25)} 0 0;
   margin-top: ${rem(10)};
-  /* white-space: nowrap; */
   overflow: hidden;
   height: 140px;
 
@@ -94,6 +120,14 @@ export const Content = styled.div`
     margin: ${rem(9)} ${rem(6)} ${rem(9)} 0;
     height: ${rem(48)};
   }
+  ${({ detailed }) =>
+    detailed &&
+    css`
+      display: inline-flex;
+      width: 52%;
+      height: ${rem(400)};
+      padding: 0 ${rem(10)};
+    `};
 `;
 
 export const FloatingText = styled.div`
