@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 import { rem, media } from "../../../styles/tools";
-import { trueWhite, darkGreen, grey90 } from "../../../styles/settings";
+import {
+  trueWhite,
+  darkGreen,
+  grey90,
+  black50
+} from "../../../styles/settings";
 import { InputWrapper, InputField } from "../../common/Input/styles";
 
 export const Wrapper = styled.div`
@@ -33,6 +38,10 @@ export const DashboardWrapper = styled.div`
   `)};
 `;
 export const Article = styled.div`
+  width: 245px;
+  height: 350px;
+  display: inline-block;
+
   ${({ last }) =>
     last &&
     css`
@@ -40,16 +49,22 @@ export const Article = styled.div`
     `};
 `;
 
+export const MainTitle = styled.h1`
+  color: ${black50};
+`;
+
+export const Image = styled.img`
+  margin: 0 auto;
+  height: 300px;
+`;
+
 export const FooterInfo = styled.span`
   color: ${grey90};
-  margin: ${rem(4.5)} 0 0 0;
   font-size: ${rem(14)};
-  padding: ${rem(5)};
 `;
 
 export const FooterWrapper = styled.span`
-  padding: ${rem(10)};
-  display: inline-flex;
+  display: inline-grid;
 `;
 
 export const Spacer = styled.div`
@@ -60,12 +75,15 @@ export const Title = styled.h1`
   font-size: ${rem(24)};
   margin: ${rem(25)} 0 ${rem(10)};
   color: ${darkGreen};
-  width: 100%;
+  width: 80%;
 `;
 
 export const Content = styled.div`
-  padding: 0 ${rem(18)};
-  margin-top: ${rem(20)};
+  padding: 0 ${rem(25)} 0 0;
+  margin-top: ${rem(10)};
+  /* white-space: nowrap; */
+  overflow: hidden;
+  height: 140px;
 
   ${InputField} {
     height: ${rem(48)};

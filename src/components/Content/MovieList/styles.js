@@ -5,12 +5,12 @@ import {
   grey10,
   black40,
   lighestgrey,
-  green
+  darkestBlue
 } from "../../../styles/settings";
 
 export const Title = styled.span`
   font-size: ${rem(23)};
-  color: ${green};
+  color: ${darkestBlue};
   text-align: center;
   font-weight: 700
   width: 100%;

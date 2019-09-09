@@ -34,22 +34,22 @@ class SidebarMenu extends Component {
       return (
         <ListMenuItems>
           <Item
-            onClick={() => redirect("/news")}
-            active={this.isActive("/news")}
+            onClick={() => redirect("/movies")}
+            active={this.isActive("/movies")}
           >
-            <Span>NEWS</Span>
+            <Span>MOVIES</Span>
           </Item>
           <Item
-            onClick={() => redirect("/vision")}
-            active={this.isActive("/vision")}
+            onClick={() => redirect("/series")}
+            active={this.isActive("/series")}
           >
-            <Span>OUR VISION</Span>
+            <Span>SERIES</Span>
           </Item>
           <Item
-            onClick={() => redirect("/contact")}
-            active={this.isActive("/contact")}
+            onClick={() => redirect("/categories")}
+            active={this.isActive("/categories")}
           >
-            <Span>CONTACT</Span>
+            <Span>CATEGORIES</Span>
           </Item>
         </ListMenuItems>
       );
@@ -58,25 +58,25 @@ class SidebarMenu extends Component {
         <MenuList>
           <Divisor />
           <ListItem
-            onClick={() => redirect("/news")}
-            active={this.isActive("/news")}
+            onClick={() => redirect("/movies")}
+            active={this.isActive("/movies")}
           >
             <LeftBorder />
-            NEWS
+            MOVIES
           </ListItem>
           <ListItem
-            onClick={() => redirect("/vision")}
-            active={this.isActive("/vision")}
+            onClick={() => redirect("/series")}
+            active={this.isActive("/series")}
           >
             <LeftBorder />
-            OUR VISION
+            SERIES
           </ListItem>
           <ListItem
-            onClick={() => redirect("/contact")}
-            active={this.isActive("/contact")}
+            onClick={() => redirect("/categories")}
+            active={this.isActive("/categories")}
           >
             <LeftBorder />
-            CONTACT
+            CATEGORIES
           </ListItem>
         </MenuList>
       );

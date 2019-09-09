@@ -14,9 +14,9 @@ class Routes extends Component {
           <Route>
             <Switch>
               <Route exact path="/" component={Content} />
-              <Route exact path="/news" component={NotFound} />
-              <Route exact path="/vision" component={NotFound} />
-              <Route exact path="/contact" component={NotFound} />
+              <Route exact path="/movies" component={NotFound} />
+              <Route exact path="/series" component={NotFound} />
+              <Route exact path="/categories" component={NotFound} />
               <Route component={NotFound} />
             </Switch>
           </Route>

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { array, oneOfType, object, func } from "prop-types";
 import ContentFilters from "./ContentFilters";
+import Icon from "../../common/Icon";
 import { filterContentByRating } from "../../../utils/filters";
+import { yellow } from "../../../styles/settings";
+import { BASE_URL_IMG } from "../../../utils/constants";
+import moment from "moment";
 
 import {
   Wrapper,
@@ -9,8 +13,9 @@ import {
   Content,
   FooterInfo,
   FooterWrapper,
-  Spacer,
-  Article
+  Article,
+  MainTitle,
+  Image
 } from "./styles";
 
 class MovieDetail extends Component {
@@ -24,6 +29,7 @@ class MovieDetail extends Component {
       }
     };
     this.onFilter = this.onFilter.bind(this);
+    this.getRatingScore = this.getRatingScore.bind(this);
   }
 
   onFilter(filter) {
@@ -36,36 +42,75 @@ class MovieDetail extends Component {
     filteringResultsByRating(filterContentByRating(movieArray, filter.rating));
   }
 
+  getRatingScore = rating => {
+    let arrStar = [];
+    for (let i = 0; i < 5; i++) {
+      arrStar.push(
+        <Icon
+          key={i}
+          name="Star"
+          width="15px"
+          height="15px"
+          color={i + 1 <= rating && yellow}
+        />
+      );
+    }
+    return arrStar;
+  };
+
   render() {
     const { filter } = this.state;
-    const { movieDisplayed } = this.props;
+    const { movieDisplayed, moviesList } = this.props;
     const isFilled = movieDisplayed && movieDisplayed.length > 0;
     return (
       <Wrapper large>
-        <ContentFilters
-          // moviesList={moviesList}
-          onFilter={this.onFilter}
-          defaultFilter={filter}
-        />
-        {!!isFilled ? (
-          movieDisplayed.map((e, i) => (
-            <Article
-              key={`article-${i}`}
-              last={i + 1 === movieDisplayed.length}
-            >
-              <Title>{e.original_title}</Title>
-              <Content>{e.overview}</Content>
-              <FooterWrapper>
-                <FooterInfo>Release Date: {e.release_date}</FooterInfo>
-                <FooterInfo>Score: {e.vote_average}</FooterInfo>
-              </FooterWrapper>
-            </Article>
-          ))
-        ) : (
-          <Spacer>
-            No content to display, select some movie, search or filter
-          </Spacer>
-        )}
+        <ContentFilters onFilter={this.onFilter} defaultFilter={filter} />
+        <MainTitle>MOVIES</MainTitle>
+        {!!isFilled
+          ? movieDisplayed.map((e, i) => (
+              <Article
+                key={`article-${i}`}
+                last={i + 1 === movieDisplayed.length}
+              >
+                <Title>{e.original_title}</Title>
+                <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
+                <Content>
+                  {e.overview.length > 179
+                    ? e.overview.substring(0, 180).concat("...")
+                    : e.overview}
+                </Content>
+                <FooterWrapper>
+                  <FooterInfo>
+                    Release Date: {moment(e.release_date).format("L")}
+                  </FooterInfo>
+                  <FooterInfo>
+                    Score: {this.getRatingScore(parseInt(e.vote_average / 2))}
+                  </FooterInfo>
+                </FooterWrapper>
+              </Article>
+            ))
+          : moviesList.map((e, i) => (
+              <Article
+                key={`article-${i}`}
+                last={i + 1 === movieDisplayed.length}
+              >
+                <Title>{e.original_title}</Title>
+                <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
+                <Content>
+                  {e.overview.length > 179
+                    ? e.overview.substring(0, 180).concat("...")
+                    : e.overview}
+                </Content>
+                <FooterWrapper>
+                  <FooterInfo>
+                    Release Date: {moment(e.release_date).format("L")}
+                  </FooterInfo>
+                  <FooterInfo>
+                    Score: {this.getRatingScore(parseInt(e.vote_average / 2))}
+                  </FooterInfo>
+                </FooterWrapper>
+              </Article>
+            ))}
       </Wrapper>
     );
   }

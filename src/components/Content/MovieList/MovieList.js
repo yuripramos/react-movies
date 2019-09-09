@@ -23,10 +23,8 @@ function MovieList({ moviesList, displayMovieDetails }) {
         moviesList.map((e, i) => (
           <Item key={i} onClick={() => displayMovieDetails(e.id)}>
             <Info>
-              {/* <Description recipient></Description> */}
               <Name>{e.original_title}</Name>
               <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
-              {/* <InfoStyle>{e.overview}</InfoStyle> */}
             </Info>
           </Item>
         ))
