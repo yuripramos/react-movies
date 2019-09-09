@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { array, oneOfType, object, func } from "prop-types";
-import ContentFilters from "./ContentFilters";
-import Icon from "../../common/Icon";
 import { filterContentByRating } from "../../../utils/filters";
 import { yellow } from "../../../styles/settings";
 import { BASE_URL_IMG } from "../../../utils/constants";
+import ContentFilters from "./ContentFilters";
+import Icon from "../../common/Icon";
 import moment from "moment";
 
 import {
@@ -13,7 +13,7 @@ import {
   Content,
   FooterInfo,
   FooterWrapper,
-  Article,
+  Movie,
   MainTitle,
   Image
 } from "./styles";
@@ -42,7 +42,7 @@ class MovieDetail extends Component {
     filteringResultsByRating(filterContentByRating(movieArray, filter.rating));
   }
 
-  getRatingScore = rating => {
+  getRatingScore(rating) {
     let arrStar = [];
     for (let i = 0; i < 5; i++) {
       arrStar.push(
@@ -56,7 +56,7 @@ class MovieDetail extends Component {
       );
     }
     return arrStar;
-  };
+  }
 
   render() {
     const { filter } = this.state;
@@ -68,10 +68,7 @@ class MovieDetail extends Component {
         <MainTitle>MOVIES</MainTitle>
         {!!isFilled
           ? movieDisplayed.map((e, i) => (
-              <Article
-                key={`article-${i}`}
-                last={i + 1 === movieDisplayed.length}
-              >
+              <Movie key={`movie-${i}`} last={i + 1 === movieDisplayed.length}>
                 <Title>{e.original_title}</Title>
                 <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
                 <Content>
@@ -87,13 +84,10 @@ class MovieDetail extends Component {
                     Score: {this.getRatingScore(parseInt(e.vote_average / 2))}
                   </FooterInfo>
                 </FooterWrapper>
-              </Article>
+              </Movie>
             ))
           : moviesList.map((e, i) => (
-              <Article
-                key={`article-${i}`}
-                last={i + 1 === movieDisplayed.length}
-              >
+              <Movie key={`movie-${i}`} last={i + 1 === movieDisplayed.length}>
                 <Title>{e.original_title}</Title>
                 <Image src={`${BASE_URL_IMG}${e.poster_path}`} />
                 <Content>
@@ -109,7 +103,7 @@ class MovieDetail extends Component {
                     Score: {this.getRatingScore(parseInt(e.vote_average / 2))}
                   </FooterInfo>
                 </FooterWrapper>
-              </Article>
+              </Movie>
             ))}
       </Wrapper>
     );

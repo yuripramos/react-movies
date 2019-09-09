@@ -2,17 +2,7 @@ import React from "react";
 import { arrayOf, object, func } from "prop-types";
 import { BASE_URL_IMG } from "../../../utils/constants";
 
-import {
-  Title,
-  Item,
-  ListWrapper,
-  // Description,
-  Info,
-  // InfoStyle,
-  Name,
-  Empty,
-  Image
-} from "./styles";
+import { Title, Item, ListWrapper, Info, Name, Empty, Image } from "./styles";
 
 function MovieList({ moviesList, displayMovieDetails, ClearFilterOnSearch }) {
   const isFilled = moviesList && moviesList.length > 0;

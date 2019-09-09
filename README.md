@@ -4,13 +4,15 @@
 
 ## :octopus: Getting Started
 
+:heavy_check_mark: react-create-app
+
 :heavy_check_mark: Styled-Components
 
 :heavy_check_mark: Dynamic Routes
 
 :heavy_check_mark: Reusable Filter
 
-:heavy_check_mark: React@16
+:heavy_check_mark: React@16.8
 
 :heavy_check_mark: High Scale Svg Icons Workflow
 
@@ -38,6 +40,13 @@ access http://localhost:3000/
 ```
 
 **Requires node >= 8.9.3**
+## Build anc check bundle
+```sh
+
+npm run build
+npm install -g serve
+serve -s build
+```
 
 ## Why Redux-zero as a state manager over redux?
 
@@ -53,7 +62,7 @@ More about Redux-zero [here](https://medium.com/@matheusml/introducing-redux-zer
 
 ## Features
 
-1. Discover - Sidebar with the most popular movies, sorted in Descending order.
+1. Discover - Sidebar with the most popular movies, sorted in *descending* order by popularity.
 2. Search - Search titles from the server API.
 3. Filter - There's a filter at the top of the page that allows you to filter by: rating.
 4. Ordered Publications - Makes part of the filter.

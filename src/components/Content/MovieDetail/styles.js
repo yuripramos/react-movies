@@ -37,7 +37,7 @@ export const DashboardWrapper = styled.div`
     padding: ${rem(25)} 0;
   `)};
 `;
-export const Article = styled.div`
+export const Movie = styled.div`
   width: 245px;
   height: 350px;
   display: inline-block;
@@ -96,33 +96,6 @@ export const Content = styled.div`
   }
 `;
 
-export const TitleWrapper = styled.div`
-  padding: 0;
-  width: 100%;
-  ${({ withRows }) =>
-    withRows &&
-    css`
-      margin: ${rem(-15)} ${rem(-15)};
-    `};
-  ${({ bigMargin }) =>
-    bigMargin &&
-    css`
-      margin-bottom: ${rem(6.2)};
-    `};
-  ${({ lowMargin }) =>
-    lowMargin &&
-    css`
-      margin-bottom: ${rem(-7)};
-    `};
-  ${({ isNewTransfer }) =>
-    isNewTransfer &&
-    css`
-      padding: 15px;
-      display: inline-flex;
-      justify-content: space-between;
-    `};
-`;
-
 export const FloatingText = styled.div`
   display: inline-flex;
   color: ${grey90};
@@ -153,18 +126,6 @@ export const ButtonWrapper = styled.div`
   ${media.md(css`
     padding: ${rem(20)};
   `)};
-`;
-
-export const ShowHideWrapper = styled.div`
-  height: 0;
-  transition: height 0.2s linear;
-  overflow: hidden;
-
-  ${({ height }) =>
-    height &&
-    css`
-      height: ${height + 55}px;
-    `};
 `;
 
 export const IconWrapper = styled.div`
