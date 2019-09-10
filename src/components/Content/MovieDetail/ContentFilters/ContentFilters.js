@@ -22,7 +22,13 @@ class ContentFilters extends Component {
   }
 
   render() {
-    const { onFilter, defaultFilter, rating, setActiveRating } = this.props;
+    const {
+      onFilter,
+      defaultFilter,
+      rating,
+      setActiveRating,
+      setMovieDetailAction
+    } = this.props;
     return (
       <Fragment>
         <SearchBar />
@@ -31,6 +37,7 @@ class ContentFilters extends Component {
             onFilter={onFilter}
             defaultFilterState={defaultFilter}
             componentLabels={componentLabels}
+            setMovieDetailAction={setMovieDetailAction}
           >
             {(changeFunc, state) => {
               return (
@@ -137,7 +144,8 @@ ContentFilters.propTypes = {
   moviesList: array,
   rating: Number,
   setActiveRating: func,
-  ClearFilterOnSearch: func
+  ClearFilterOnSearch: func,
+  setMovieDetailAction: func
 };
 
 export default ContentFilters;

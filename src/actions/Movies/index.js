@@ -21,7 +21,13 @@ export default () => ({
   },
   filteringResultsByRating: (state, array) => {
     return {
-      movieDisplayed: array
+      movieDisplayed: array,
+      rating: 0
+    };
+  },
+  setMovieDetailAction: () => {
+    return {
+      isMovieDetailAction: false
     };
   }
 });

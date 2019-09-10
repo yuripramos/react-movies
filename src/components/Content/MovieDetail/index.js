@@ -5,10 +5,16 @@ import { connect } from "redux-zero/react";
 import contentActions from "../../../actions/Movies";
 
 export default connect(
-  ({ filteringResultsByRating, displayMovieDetails, isMovieDetailAction }) => ({
+  ({
     filteringResultsByRating,
     displayMovieDetails,
-    isMovieDetailAction
+    isMovieDetailAction,
+    setMovieDetailAction
+  }) => ({
+    filteringResultsByRating,
+    displayMovieDetails,
+    isMovieDetailAction,
+    setMovieDetailAction
   }),
   contentActions
 )(MovieDetail);

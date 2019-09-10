@@ -60,10 +60,10 @@ class Filter extends Component {
     const {
       mobileFilterDescriptionRenderer,
       children,
-      componentLabels
+      componentLabels,
+      setMovieDetailAction
     } = this.props;
     const { isShown, filter } = this.state;
-
     return (
       <FilterWrapper onSubmit={this.handleFormSubmit} isShown={isShown}>
         <FilterGroup onClick={this.handleShowHide}>
@@ -89,7 +89,13 @@ class Filter extends Component {
             {children(this.onChangeFilters, this.state)}
           </FilterContent>
 
-          <Button isCallToAction small width={110} type="submit">
+          <Button
+            isCallToAction
+            small
+            width={110}
+            type="submit"
+            onClick={() => setMovieDetailAction()}
+          >
             {componentLabels.filterButton}
           </Button>
           {/* if in mobile context wrapper init */}
@@ -108,7 +114,8 @@ Filter.propTypes = {
   componentLabels: shape({
     filterButton: string,
     filterLabel: string
-  }).isRequired
+  }).isRequired,
+  setMovieDetailAction: func
 };
 
 export default Filter;

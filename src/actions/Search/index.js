@@ -14,7 +14,8 @@ export default () => ({
   getQueryListBySearch: async (state, query) => {
     const moviesResponse = await CONTENT_API.getQueryMovies(query);
     return {
-      movieDisplayed: [...moviesResponse.results]
+      movieDisplayed: [...moviesResponse.results],
+      isMovieDetailAction: false
     };
   },
   ClearSearchBar: () => {
@@ -30,7 +31,7 @@ export default () => ({
   },
   setActiveRating: (state, rating) => {
     return {
-      rating
+      rating: state.rating === rating ? 0 : rating
     };
   }
 });

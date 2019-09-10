@@ -35,7 +35,7 @@ class MovieDetail extends Component {
   onFilter(filter) {
     const { moviesList, movieDisplayed, filteringResultsByRating } = this.props;
     const movieArray =
-      movieDisplayed && movieDisplayed.length > 0 ? movieDisplayed : moviesList;
+      movieDisplayed && movieDisplayed.length > 1 ? movieDisplayed : moviesList;
     this.setState({
       filter
     });
@@ -64,12 +64,17 @@ class MovieDetail extends Component {
       movieDisplayed,
       moviesList,
       displayMovieDetails,
-      isMovieDetailAction
+      isMovieDetailAction,
+      setMovieDetailAction
     } = this.props;
     const isFilled = movieDisplayed && movieDisplayed.length > 0;
     return (
       <Wrapper large>
-        <ContentFilters onFilter={this.onFilter} defaultFilter={filter} />
+        <ContentFilters
+          onFilter={this.onFilter}
+          defaultFilter={filter}
+          setMovieDetailAction={setMovieDetailAction}
+        />
         <MainTitle>MOVIES</MainTitle>
         {!!isFilled
           ? movieDisplayed.map((e, i) => (
@@ -79,7 +84,7 @@ class MovieDetail extends Component {
                 last={i + 1 === movieDisplayed.length}
                 detailed={isMovieDetailAction}
               >
-                <Title>{e.original_title}</Title>
+                <Title>{e.original_title || "Title"}</Title>
                 <Image
                   src={`${BASE_URL_IMG}${e.poster_path}`}
                   detailed={isMovieDetailAction}
@@ -136,5 +141,6 @@ MovieDetail.propTypes = {
   movieDisplayed: oneOfType([object, array]),
   filteringResultsByRating: func,
   displayMovieDetails: func,
-  isMovieDetailAction: bool
+  isMovieDetailAction: bool,
+  setMovieDetailAction: func
 };
