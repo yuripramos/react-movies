@@ -64,7 +64,7 @@ More about Redux-zero [here](https://medium.com/@matheusml/introducing-redux-zer
 
 1. Discover - Sidebar with the most popular movies, sorted in *descending* according popularity.
 2. Search - Search titles from the server API.
-3. Filter - There's a filter at the top of the page that allows you to filter by: rating. Can filter the discover results or the search results, depends which moment you want to use the filter.
+3. Filter - There's a filter at the top of the page that allows you to filter by: *rating*. Can filter the discover results or the search results, depends which moment you want to use the filter.
 4. Detailed View - When the user clicks in one certain movie the app provides a specific page for the movie.
 
 
